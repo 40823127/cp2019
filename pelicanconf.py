@@ -13,7 +13,7 @@ USE_FOLDER_AS_CATEGORY = False
 
 TIMEZONE = 'Asia/Taipei'
 
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = 'https://40823127.github.io/cp2019/blog'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
