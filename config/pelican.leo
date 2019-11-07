@@ -66,7 +66,8 @@
 <v t="leo.20170710022041.1"><vh>@path markdown</vh>
 <v t="leo.20180115115910.1"><vh>2018</vh>
 <v t="leo.20180423103639.1"><vh>2018 Fall CP 課程</vh>
-<v t="leo.20180423103656.1"><vh>@edit 20180910.md</vh></v>
+<v t="leo.20180423103656.1"><vh>@edit 20190910.md</vh></v>
+<v t="pelican-leo.20191107115459.1"><vh>@auto 20191107.md</vh></v>
 </v>
 </v>
 </v>
