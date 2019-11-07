@@ -67,7 +67,16 @@
 <v t="leo.20180115115910.1"><vh>2018</vh>
 <v t="leo.20180423103639.1"><vh>2018 Fall CP 課程</vh>
 <v t="leo.20180423103656.1"><vh>@edit 20190910.md</vh></v>
-<v t="pelican-leo.20191107115459.1"><vh>@auto 20191107.md</vh></v>
+<v t="pelican-leo.20191107115459.1"><vh>@edit 20191107.md</vh>
+<v t="pelican-leo.20191107115459.2"><vh>!Declarations</vh>
+<v t="pelican-leo.20191107115459.3"><vh>為何要使用可攜系統</vh></v>
+<v t="pelican-leo.20191107115459.4"><vh>Windows 10 更新所造成的問題</vh></v>
+<v t="pelican-leo.20191107115459.5"><vh>系統 path 搜尋路徑的修改</vh></v>
+<v t="pelican-leo.20191107115459.6"><vh>python 執行路徑的修改</vh></v>
+<v t="pelican-leo.20191107115459.7"><vh>安裝 python 新增模組</vh></v>
+<v t="pelican-leo.20191107115459.8"><vh>Pelican 設定修改</vh></v>
+</v>
+</v>
 </v>
 </v>
 </v>
@@ -101,6 +110,136 @@ g.es("admin pelican Github 執行完畢")
 <t tx="leo.20180115115910.1"></t>
 <t tx="leo.20180115142025.1"></t>
 <t tx="leo.20180423103639.1"></t>
+<t tx="pelican-leo.20191107115459.1">@language md
+---
+Title: 期中統合影片
+Date: 2019-11-07 11:55
+Category: Misc
+Tags: 影片
+Slug: 2019-Fall-Win10-1903
+Author: yen
+---
+https://www.youtube.com/watch?v=J4FOJ8DoqEE&amp;t=15s
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+</t>
+<t tx="pelican-leo.20191107115459.2">---
+Title: 2019 Fall CP 課程
+Date: 2019-10-30 11:00
+Category: Misc
+Tags: 2019FallCP
+Slug: 2019-Fall-Win10-1903
+Author: yen
+---
+
+2019 Fall 一開始, 1903 版的 Windows 10 就大舉更新, 除了逐步去掉先前許多舊版的設定視窗, 也將系統的指令搜尋與 App 應用程式進行綁定. 許多採用可攜設定的程式執行流程, 隨著更新進程的推展, 必須因應修改才可以正常運作.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+</t>
+<t tx="pelican-leo.20191107115459.3">
+自從 1995 年 Windows 95 與 Solidworks 95 在個人電腦中推出, 至今二十幾年, 幾乎所有與機械設計相關的單機套件的操作系統都在 Windows 上, 但是一旦需要建構所謂的 client-server 或雲端機械設計運算系統, 以 Ubuntu 為主的 Linux 伺服器顯然在成本與效益上, 擁有許多優勢. 因此長遠來看, 任何在 Windows 上操作的計算機運算流程, 都必須設法能夠在 Windows 與 Linux 上運作.
+
+在 Windows 10 環境中使用可攜系統的原因, 主要是讓計算機程式課程中所使用的工具, 都可以放在 USB 3.0 規格以上的隨身碟或隨身硬碟上運作, 而第二個原因則是希望這些工具都能相容於 Linux 系統.
+
+</t>
+<t tx="pelican-leo.20191107115459.4">
+電腦輔助設計室中的第三磁區, 在完全沒有還原保護的情況下, 每一台電腦每次開機都會執行 Windows 10 的更新檢查, 然後依照更新期程的排定, 逐步更新. 因此, 從實際面來看, 每一台電腦的設定與內容並非完全相同. 使用者在開機後, 就必須根據電腦的現況進行因應. 而電腦操作系統更新造成的問題在於: 各電腦的實際現況與下載可攜系統當時製作環境不同, 因此部分設定必須配合修改後, 才可正常運作.
+
+</t>
+<t tx="pelican-leo.20191107115459.5">
+Windows 10 1903 版次在 Fall 開學後, 將 Python 執行路徑的搜尋納入系統 path 後, 假如所使用的 Windows 10 並未安裝 Python 解譯套件, 以系統內定 path 搜尋後, 會自動將使用者導引到 Python App 的安裝畫面.
+
+這樣的改變, 將會對原先可攜程式系統造成兩種影響, 第一的影響是: start.bat 中以系統 path 設為第一優先下, 使用者在命令列中輸入 python 解譯器指令時, Windows 10 就會將使用者帶到要求 Python App 安裝的畫面.
+
+因應修改的方法, 就是將 start.bat 中操作系統 path 優先權去除, 也就是 set path=%path%;... 中的 %path% 放到最後順序, 或者乾脆刪除.
+
+第二項影響則是對 SciTE中 Python 的程式執行. 因為 2019 Fall 開始隨身程式系統製作時 path 可綁訂至隨身系統中的 Python 3.7.3, 因此 SciTE 中有關 .py 程式執行設定, 直接設為 path 中, 以 pythonw.exe 解譯 .py 程式, 一旦 path 無法指到隨身系統中的 python 解譯系統,  SciTE 中的 .py 程式執行, 就必須明確指定 Python 3.7.3 所在的指令路徑.
+
+也就是帶出 Options -&gt; python.properties 設定檔案, 然後進行修改:
+
+&lt;pre class="brush: python"&gt;
+if PLAT_WIN
+    command.go.*.py=Y:\cad\201906_fall\data\py373\pythonw -u "$(FileNameExt)"
+    command.go.subsystem.*.py=1
+    command.go.*.pyw=pythonw -u "$(FileNameExt)"
+    command.go.subsystem.*.pyw=1
+    command.build.SConscript=scons.bat --up .
+    command.build.SConstruct=scons.bat .
+&lt;/pre&gt;
+
+</t>
+<t tx="pelican-leo.20191107115459.6">
+除了採用明碼進行設定的 python.properties 必須配合修改外, 以二位元碼設定的 py373/Scripts/pelican.exe 也必須利用 [hxd] 進行 python 執行路徑字串置換修改.
+
+[hxd]: https://mh-nexus.de/en/hxd/
+
+</t>
+<t tx="pelican-leo.20191107115459.7">
+當使用者在執行 python 解譯時, 若碰到缺少特定模組時, 可以利用 
+
+python -m pip install flask_cors
+
+進行安裝.
+
+</t>
+<t tx="pelican-leo.20191107115459.8">
+theme/attila/templates/base.html 中必須進行下列修改:
+
+&lt;pre class="brush: jscript"&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"&gt;&lt;/script&gt;
+&lt;script type='text/javascript'&gt;
+    (function(){
+        var corecss = document.createElement('link');
+        var themecss = document.createElement('link');
+        var corecssurl = "./../cmsimde/static/syntaxhighlighter/css/shCore.css";
+        if ( corecss.setAttribute ) {
+                corecss.setAttribute( "rel", "stylesheet" );
+                corecss.setAttribute( "type", "text/css" );
+                corecss.setAttribute( "href", corecssurl );
+        } else {
+                corecss.rel = "stylesheet";
+                corecss.href = corecssurl;
+        }
+        document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+        var themecssurl = "./../cmsimde/static/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+        if ( themecss.setAttribute ) {
+                themecss.setAttribute( "rel", "stylesheet" );
+                themecss.setAttribute( "type", "text/css" );
+                themecss.setAttribute( "href", themecssurl );
+        } else {
+                themecss.rel = "stylesheet";
+                themecss.href = themecssurl;
+        }
+        //document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+        document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+    })();
+    SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+    SyntaxHighlighter.config.strings.help = '?';
+    SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+    SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+    SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+    SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+&lt;/script&gt;
+
+&lt;!-- for LaTeX equations --&gt;
+&lt;script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;/pre&gt;
+</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/
