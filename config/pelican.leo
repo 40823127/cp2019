@@ -41,14 +41,6 @@
 </v>
 <v t="leo.20180115142025.1"><vh>保留之前舊的設定檔案</vh></v>
 </v>
-<v t="yen.20170224232341.2"><vh>@path theme/pelican-bootstrap3_local/templates</vh>
-<v t="yen.20170224232341.3"><vh>@edit base.html</vh></v>
-</v>
-<v t="leo.20170710015301.1"><vh>@path theme/pelican-bootstrap3/templates</vh>
-<v t="leo.20170710015311.1"><vh>@edit search.html</vh></v>
-<v t="leo.20170710095845.1"><vh>@edit base.html</vh></v>
-<v t="leo.20170710101854.1"><vh>@edit article.html</vh></v>
-</v>
 </v>
 <v t="leo.20170710015511.1"><vh>編輯 plugin</vh>
 <v t="leo.20170710015523.1"><vh>@path plugin</vh>
@@ -97,7 +89,6 @@ g.es("admin pelican Github 執行完畢")
 
 
 </t>
-<t tx="leo.20170710015301.1"></t>
 <t tx="leo.20170710015511.1"></t>
 <t tx="leo.20170710015523.1"></t>
 <t tx="leo.20170710015523.2"></t>
@@ -389,6 +380,5 @@ def domake():
 make = threading.Thread(target=domake)
 make.start()</t>
 <t tx="yen.20170224232341.1"></t>
-<t tx="yen.20170224232341.2"></t>
 </tnodes>
 </leo_file>
