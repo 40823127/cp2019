@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
+import 'package:flutter_web_ui/ui.dart' as ui;
 
 class SpinningSquare extends StatefulWidget {
   @override
@@ -39,12 +40,8 @@ class _SpinningSquareState extends State<SpinningSquare>
   }
 }
 
+Future<void> main() async {
+  await ui.webOnlyInitializePlatform();
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: new Center(child: new SpinningSquare()),
-    ),
-  );
+    runApp(new Center(child: new SpinningSquare()));
 }

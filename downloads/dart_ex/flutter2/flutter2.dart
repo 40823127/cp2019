@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
+import 'package:flutter_web_ui/ui.dart' as ui;
 
 class MyApp extends StatelessWidget {
   @override
@@ -25,11 +26,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyApp(),
-    ),
-  );
+Future<void> main() async {
+  await ui.webOnlyInitializePlatform();
+
+  runApp(MyApp());
 }
