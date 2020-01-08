@@ -14,15 +14,31 @@ void main() {
 
   drawROC(ctx);
   querySelector("#roc").onClick.listen((e) => drawROC(ctx));
+  querySelector("#usa").onClick.listen((e) => drawUSA(ctx));
   querySelector("#button").onClick.listen((e) => clearCanvas());
 }
 
+void drawUSA(ctx){
+  //RED
+  ctx.clearRect(0, 0, flag_w, flag_h);
+  ctx.fillStyle = 'rgb(255,0,0)';
+  ctx.fillRect(0, 0, flag_w, flag_h);
+  //BLUE
+  ctx.fillStyle='rgb(0,0,150)';
+  ctx.fillRect(0, 0, flag_w/2, flag_h/1.7);
+
+  
+}
+
 void drawROC(ctx){
+  // 先畫滿地紅
   ctx.clearRect(0, 0, flag_w, flag_h);
   ctx.fillStyle = 'rgb(255, 0, 0)';
   ctx.fillRect(0, 0, flag_w, flag_h);
+  // 再畫青天
   ctx.fillStyle = 'rgb(0, 0, 150)';
   ctx.fillRect(0, 0, flag_w / 2, flag_h / 2);
+  // 畫十二道光芒白日
   ctx.beginPath();
   num star_radius = flag_w / 8;
   num angle = 0;
@@ -30,22 +46,28 @@ void drawROC(ctx){
     angle += 5 * Math.pi * 2 / 12;
     num toX = circle_x + Math.cos(angle) * star_radius;
     num toY = circle_y + Math.sin(angle) * star_radius;
+    // 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
     if (i != 0)
       ctx.lineTo(toX, toY);
     else
       ctx.moveTo(toX, toY);
   }
   ctx.closePath();
+  // 將填色設為白色
   ctx.fillStyle = '#fff';
   ctx.fill();
+  // 白日:藍圈
   ctx.beginPath();
   ctx.arc(circle_x, circle_y, flag_w * 17 / 240, 0, Math.pi * 2, true);
   ctx.closePath();
+  // 填色設為藍色
   ctx.fillStyle = 'rgb(0, 0, 149)';
   ctx.fill();
+  // 白日:白心
   ctx.beginPath();
   ctx.arc(circle_x, circle_y, flag_w / 16, 0, Math.pi * 2, true);
   ctx.closePath();
+  // 填色設為白色
   ctx.fillStyle = '#fff';
   ctx.fill();
 }
