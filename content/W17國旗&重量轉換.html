@@ -149,18 +149,103 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='微分方程式&圖表.html'>Next</a> >> 微分方程式&圖表<br /><h1>哈囉&迴圈</h1>
-<p>Gist:<a href="https://gist.github.com/40823127/e57e95b4f07ce259ac82a56ee43364b8">https://gist.github.com/40823127/e57e95b4f07ce259ac82a56ee43364b8</a></p>
-<p><span>Dartpad: </span><a href="http://mde.tw/dartpad/?id=e57e95b4f07ce259ac82a56ee43364b8">http://mde.tw/dartpad/?id=e57e95b4f07ce259ac82a56ee43364b8</a><a href="http://mde.tw/dartpad/?id=d7c4f7b267d43acd6ee7f78d581c4c5c"></a></p>
-<p>原始碼:</p>
-<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">main() {
-for (int i = 0; i &lt; 5; i++) {
-print('hello $i');
-}
-print('hello 中文');
-}</pre>
+    <div id="tipue_search_content">W15亂數分組&五芒星 << <a href='W15亂數分組&五芒星.html'>Previous</a> <br /><h1>W17國旗&重量轉換</h1>
+<p><canvas height="200" id="canvas" width="300"></canvas> <button id="clear">清除</button> <button id="usa">俄羅斯國旗</button> <button id="fr">法國國旗</button> <button id="LN">荷蘭國旗</button> <button id="BDR">德國國旗</button> <button id="ROC">中華民國國旗</button> <button id="jp">日本國旗</button></p>
 <p></p>
-<br /> <a href='微分方程式&圖表.html'>Next</a> >> 微分方程式&圖表</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<script src="/../cp2019/downloads/dart_ex/Flag/flag.js"></script>
+<p>-------------------------------------------------------------------------------------------------------------</p>
+<p style="text-align: center;">重量</p>
+<p>請輸入所要轉換的重量<br/>以數字加上 kg 或 lb:<br/><br/><input id="temp" max="30" min="1" type="text" value="20kg"/> <input id="submit" type="button" value="換算"/><br/> <br/>轉換結果:<br/><br/><label id="output"></label></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<script src="/../cp2019/downloads/dart_ex/weight/weight.js"></script>
+<p>-------------------------------------------------------------------------------------------------------------</p>
+<p><iframe height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=0a2736926b2686b2f2407c54a406b43c&amp;theme=dark" width="1200"></iframe></p>
+<p>-------------------------------------------------------------------------------------------------------------</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<script>
+function getDart(dirname){
+    source = "https://dartpad.github.io/embed-dart.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+    document.getElementById("iframe").src = source ;
+}
+function getHtmlDart(dirname){
+    source = "https://dartpad.github.io/embed-html.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+function getFlutter(dirname){
+    source = "https://dartpad.github.io/embed-flutter.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/" + dirname + "&theme=dark";
+document.getElementById("iframe").src = source ;
+}
+function largest(){
+document.getElementById("iframe").width = document.body.clientWidth ;
+document.getElementById("iframe").height = document.body.clientWidth*0.5 ;
+}
+function original(){
+document.getElementById("iframe").width = 800 ;
+document.getElementById("iframe").height = 600 ;
+}
+</script>
+<p>純 Dart 程式</p>
+<p><button onclick="getDart('weightt')">重量轉換純Dart</button></p>
+<p><button onclick="getHtmlDart('flagg')">國旗Html</button></p>
+<p><!-- 內建放入的 Dart 原始碼 --></p>
+<p><button onclick="largest()">放大</button> <button onclick="original()">回復</button></p>
+<p><iframe height="600" id="iframe" src="https://dartpad.dartlang.org/embed-dart.html?gh_owner=40823142&amp;gh_repo=cp2019&amp;gh_path=downloads/dart_ex/weightt&amp;theme=dark" width="800"></iframe><br/><!-- footer --></p>
+<div class="container">
+<div class="row pt-3 mx-auto">
+<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> Copyright ©
+<script>
+document.write(new Date().getFullYear());
+</script>
+All rights reserved | This template is made with <i aria-hidden="true" class="icon-heart"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+</div>
+</div>
+<p></p>
+<!-- for footer -->
+<p></p>
+<!-- for site wrap -->
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+<script src="/cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/cmsimde/static/chimper/js/jquery-ui.js"></script>
+<script src="/cmsimde/static/chimper/js/popper.min.js"></script>
+<script src="/cmsimde/static/chimper/js/bootstrap.min.js"></script>
+<script src="/cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+<script src="/cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+<script src="/cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+<script src="/cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+<script src="/cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+<script src="/cmsimde/static/chimper/js/aos.js"></script>
+<!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+<script src="/cmsimde/static/chimper/js/main.js"></script><br />W15亂數分組&五芒星 << <a href='W15亂數分組&五芒星.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
