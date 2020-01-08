@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 <title>
-CMSimfly 網際內容管理
+計算機程式
 </title>
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -39,15 +39,15 @@ CMSimfly 網際內容管理
 <div class="slides">
 <section data-markdown>
     <script type="text/template">
-## CMSimfly 網際內容管理
+## 計算機程式期末報告
 
-### KMOLab
+陳佑杰
 
 <small>
-Created by [KMOLab](http://lab.kmol.info/)
+Created by [40823127]
 </small>
 
-[CMSimfly 網誌](./../blog/index.html)
+[網站](https://40823127.github.io/cp2019/content/index.html)
 
 
     </script>
@@ -57,30 +57,30 @@ Created by [KMOLab](http://lab.kmol.info/)
 						
 <section data-markdown>
     <script type="text/template">
-# 投影片快捷鍵
+## Dart目錄
 
-* 利用箭頭上下前後換頁
-* 按 f 鍵進入全螢幕模式 (full screen)
-* 按 s 鍵可以顯示投影片筆記 (show)
-* 按 o 鍵可以切換單張或全域檢視 (overview)
-* 按 b 或 . 鍵可以切換螢幕黑屏 (black)
-* 按 Esc 可以退出全螢幕或全域檢視 (Escape)
+* [Hello world](https://40823127.github.io/cp2019/reveal/index.html#/2)
+* [溫度轉換(攝轉華)](https://40823127.github.io/cp2019/reveal/index.html#/2/1)
+* [溫度轉換(華轉攝)](https://40823127.github.io/cp2019/reveal/index.html#/2/2)
+* [溫度轉換偵測](https://40823127.github.io/cp2019/reveal/index.html#/2/3)
+* [重量轉換](https://40823127.github.io/cp2019/reveal/index.html#/2/4)
+* [國旗(Html)](https://40823127.github.io/cp2019/reveal/index.html#/3)
+* [國旗(Js)](https://40823127.github.io/cp2019/reveal/index.html#/4)
+* [心得](https://40823127.github.io/cp2019/reveal/index.html#/5)
+
+
+
 
     </script>
 </section>
 
 
-						
+			
 <section>
 <section data-markdown>
     <script type="text/template">
-<!-- 請注意, @others 不可以內縮 -->
-# 數學符號與方程式
-
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
+# Hello world & for
+<iframe width="1200" height="540" src="https://dartpad.dartlang.org/?id=e57e95b4f07ce259ac82a56ee43364b8"></iframe>
     </script>
 </section>
 
@@ -90,32 +90,18 @@ $$I = \int \rho R^{2} dV$$
 <section data-markdown>
     <script type="text/template">
 <!-- 請注意, @others 不可以內縮 -->
-## 利用 Markdown 寫投影片
-以下利用 Markdown 格式展示 Python 程式碼:
-```
-# use threading and subprocess to threading the make process
-import os
-import subprocess
-import threading
+# 溫度轉換
+攝氏轉華氏：
+<iframe width="1200" height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=0531e7bcacabc538c5d646e923bb402f&amp;theme=dark"></iframe>
 
-def domake():
-    
-    path = "../exposed/api/exposed"
-    ubuntu = "../Ubuntu"
-    
-    # create obj path
-    
-    if not os.path.exists(path+"/../obj"):
-        os.makedirs(path+"/../obj")
-    
-    subprocess.call(["make", "clean"], cwd=path)
-    subprocess.call("make", cwd=path)
-    subprocess.call(["cp", "{libslvs.so, _slvs.so, slvs.py}", ubuntu], cwd=path)
-    subprocess.call(["python3", "circle_ex.py"], cwd=path+"/"+ubuntu)
-    
-make = threading.Thread(target=domake)
-make.start()
-```
+    </script>
+</section>
+<section data-markdown>
+    <script type="text/template">
+# 溫度轉換
+華氏轉攝氏：
+<iframe width="1200" height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=132e78a9b66a0e242a3a91b0f5a87813&amp;theme=dark"></iframe>
+
     </script>
 </section>
 
@@ -124,11 +110,40 @@ make.start()
 						
 <section data-markdown>
     <script type="text/template">
-## 使用 iframe 導入影片
+# 溫度轉換偵測
+<iframe width="1200" height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=ee4bcfbd253fb2d87190c4c4b7523dee&amp;theme=dark"></iframe>
 
-### 導入影片 template
+    </script>
+</section>
 
-<iframe src="https://player.vimeo.com/video/183950627" width="640" height="492" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+						
+<section data-markdown>
+    <script type="text/template">
+# 重量轉換
+<iframe width="1200" height="1000" src="https://dartpad.dartlang.org/embed-dart.html?id=0a2736926b2686b2f2407c54a406b43c&amp;theme=dark"></iframe>
+    </script>
+</section>
+
+</section>
+						
+<section data-markdown>
+    <script type="text/template">
+# 國旗
+
+<iframe width="1200" height="800" src="https://dartpad.github.io/embed-html.html?gh_owner=40823142&gh_repo=cp2019&gh_path=downloads/dart_ex/flagg&theme=dark" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </script>
+</section>
+
+
+<section data-markdown>
+    <script type="text/template">
+# 國旗
+跑不出來LA  ˋˊ
+<p><canvas height="200" id="canvas" width="300"></canvas> <button id="clear">清除</button> <button id="usa">俄羅斯國旗</button> <button id="fr">法國國旗</button> <button id="LN">荷蘭國旗</button> <button id="BDR">德國國旗</button> <button id="ROC">中華民國國旗</button> <button id="jp">日本國旗</button></p>
+<script src="/../cp2019/downloads/dart_ex/flag/flag.js"></script>
+
     </script>
 </section>
 
@@ -136,6 +151,37 @@ make.start()
 						
 </section>
 
+<section data-markdown>
+    <script type="text/template">
+# 心得→→→
+
+    </script>
+</section>
+
+
+						
+</section>
+
+<section data-markdown>
+    <script type="text/template">
+在這一個學期從甚麼都不知道，後來一個一個慢慢學學到了許多東西，從一開始的Helloword的單純程式到用Html和Css弄出來的國旗途中也是遇到許多挑戰
+電腦不僅僅是用來消磨時間的，未來趨勢也是由電腦來創造的，例如手機APP，電腦程式等等。
+
+
+
+
+    </script>
+</section>
+
+
+						
+</section>
+
+
+
+
+
+						
 </div>
 
 </div>
@@ -167,4 +213,3 @@ make.start()
 </body>
 
 </html>
-
